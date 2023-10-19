@@ -1,3 +1,10 @@
+import DataFetching from '../components/DataFetching';
+
 export const Home = () => {
-  return <div>Home Page</div>;
+  return (
+    <>
+      <DataFetching />
+      <div>Home Page</div>
+    </>
+  );
 };
