@@ -6,8 +6,8 @@ export const Root = () => {
   return (
     <>
       <Header />
-      <Outlet />
       <SideBar />
+      <Outlet />
     </>
   );
 };

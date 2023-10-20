@@ -5,16 +5,20 @@ import {
   RouterProvider,
 } from 'react-router-dom';
 import { Home } from './pages/Home';
-import { About } from './pages/About';
 import { ErrorPage } from './pages/ErrorPage';
 import { Root } from './layouts/Root';
 import './style/App.css';
+import Profile from './pages/Profile';
+import Settings from './pages/Settings';
+import Community from './pages/Community';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Root />} errorElement={<ErrorPage />}>
       <Route path="/" element={<Home />} />
-      <Route path="about" element={<About />} />
+      <Route path="profile" element={<Profile />} />
+      <Route path="settings" element={<Settings />} />
+      <Route path="community" element={<Community />} />
     </Route>,
   ),
 );

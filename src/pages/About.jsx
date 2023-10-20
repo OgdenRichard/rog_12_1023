@@ -1,3 +1,7 @@
 export const About = () => {
-  return <div>About Page</div>;
+  return (
+    <main>
+      <div>About Page</div>
+    </main>
+  );
 };
