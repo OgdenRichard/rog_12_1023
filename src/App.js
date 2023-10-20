@@ -8,6 +8,7 @@ import { Home } from './pages/Home';
 import { About } from './pages/About';
 import { ErrorPage } from './pages/ErrorPage';
 import { Root } from './layouts/Root';
+import './style/App.css';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
