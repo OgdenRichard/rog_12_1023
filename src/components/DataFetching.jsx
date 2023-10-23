@@ -2,18 +2,19 @@ import React, { useEffect } from 'react';
 import axios from 'axios';
 import { USER_MAIN_DATA } from '../mocks/mockdata';
 
-function DataFetching() {
-  console.log(...USER_MAIN_DATA.filter((user) => user.id === 12));
+function DataFetching({ isMocked }) {
   useEffect(() => {
-    axios
-      .get('mocks/user/12/12')
-      .then((res) => {
-        console.log(res);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, []);
+    isMocked
+      ? console.log(...USER_MAIN_DATA.filter((user) => user.id === 12))
+      : axios
+          .get('mocks/user/12/maindata')
+          .then((res) => {
+            console.log(res.data);
+          })
+          .catch((err) => {
+            console.log(err);
+          });
+  }, [isMocked]);
 
   return (
     <>
