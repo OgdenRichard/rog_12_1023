@@ -14,7 +14,7 @@ function SideBar() {
           <img src={bike} alt="logo cyclisme" />
           <img src={dumbbells} alt="logo musculation" />
         </div>
-        <div className="sidebar__copyright">Hé salut ça va?</div>
+        <div className="sidebar__copyright">Copyright, SportSee 2020</div>
       </section>
     </>
   );

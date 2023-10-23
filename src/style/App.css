@@ -62,8 +62,7 @@ main {
 
 .sidebar__copyright {
   position: fixed;
-  bottom: 5em;
-  left: 0;
+  bottom: 8em;
   z-index: 0;
   width: auto;
   margin: auto;
