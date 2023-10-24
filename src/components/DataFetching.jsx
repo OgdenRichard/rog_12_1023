@@ -7,7 +7,6 @@ function DataFetching({ isMocked }) {
   useEffect(() => {
     const fetcho = new Tryout(12, 'performance', false);
     fetcho.getData();
-    console.log(fetcho.data);
     /* isMocked
       ? console.log(...USER_MAIN_DATA.filter((user) => user.id === 12))
       : axios
