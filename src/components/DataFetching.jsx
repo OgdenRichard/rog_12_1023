@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react';
 import axios from 'axios';
 import { USER_MAIN_DATA } from '../mocks/mockdata';
-import Tryout from '../services/Tryout';
+import Tryout from '../services/UserData';
 
 function DataFetching({ isMocked }) {
   useEffect(() => {
-    const fetcho = new Tryout(12, 'performance', false);
+    const fetcho = new Tryout(12, '', false);
     fetcho.getData();
     /* isMocked
       ? console.log(...USER_MAIN_DATA.filter((user) => user.id === 12))
@@ -21,7 +21,7 @@ function DataFetching({ isMocked }) {
 
   return (
     <>
-      <div>Salut</div>
+      <div>Salut, il fetcho</div>
     </>
   );
 }
