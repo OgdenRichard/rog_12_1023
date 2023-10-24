@@ -1,6 +1,9 @@
 export default class UserModel {
   constructor(data) {
     this.firstName = data.userInfos.firstName;
+    this.dailyScore = 0;
+    this.setDailyScore(data);
+    this.setKeyData(data);
   }
 
   setDailyScore = (data) => {

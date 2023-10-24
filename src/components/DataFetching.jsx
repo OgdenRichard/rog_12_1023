@@ -5,7 +5,7 @@ import Tryout from '../services/UserData';
 
 function DataFetching({ isMocked }) {
   useEffect(() => {
-    const fetcho = new Tryout(12, '', false);
+    const fetcho = new Tryout(12, 'performance', false);
     fetcho.getData();
     /* isMocked
       ? console.log(...USER_MAIN_DATA.filter((user) => user.id === 12))
