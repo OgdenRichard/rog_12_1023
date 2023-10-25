@@ -1,15 +1,19 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import UserDataService from '../services/UserDataService';
 
 function DataFetching({ isMocked }) {
+  const [data, setData] = useState({});
   useEffect(() => {
-    const fetcho = new UserDataService(18, '', false);
-    fetcho.init();
+    const fetchData = async () => {
+      const data = await new UserDataService(18, '', false).loadData();
+      setData(data);
+    };
+    fetchData();
   }, [isMocked]);
 
   return (
     <>
-      <div>Salut, il fetcho</div>
+      <div>{data.firstName}</div>
     </>
   );
 }

@@ -12,14 +12,10 @@ export default class UserDataService {
     this.baseUrl = API_BASE_URL;
   }
 
-  init = async () => {
+  loadData = async () => {
     this.buildRequestUrl();
     await this.getData();
-    console.log(this.data);
-    if (Object.keys(this.data)) {
-      const tryout = new DataFactory(this.params, this.data).model;
-      console.log(tryout);
-    }
+    return new DataFactory(this.params, this.data).model;
   };
 
   buildRequestUrl = () => {
