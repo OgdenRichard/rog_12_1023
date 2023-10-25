@@ -1,12 +1,13 @@
 export default class ActivityModel {
   constructor(data) {
     this.userId = data.userId;
-    this.chartData = [];
+    this.setChartData(data);
   }
 
   setChartData = (data) => {
-    if (data.data) {
-      this.chartData = data.data.map((item, index) => {
+    this.chartData = [];
+    if (data.sessions) {
+      this.chartData = data.sessions.map((item, index) => {
         return {
           key: index + 1,
           kg: item.kilogram,

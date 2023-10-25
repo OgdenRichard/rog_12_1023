@@ -3,18 +3,8 @@ import UserDataService from '../services/UserDataService';
 
 function DataFetching({ isMocked }) {
   useEffect(() => {
-    const fetcho = new UserDataService(12, 'performance', true);
+    const fetcho = new UserDataService(18, '', false);
     fetcho.init();
-    /* isMocked
-      ? console.log(...USER_MAIN_DATA.filter((user) => user.id === 12))
-      : axios
-          .get('mocks/user/12/maindata')
-          .then((res) => {
-            console.log(res.data);
-          })
-          .catch((err) => {
-            console.log(err);
-          }); */
   }, [isMocked]);
 
   return (

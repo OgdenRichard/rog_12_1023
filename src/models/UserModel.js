@@ -1,18 +1,12 @@
 export default class UserModel {
   constructor(data) {
     this.firstName = data.userInfos.firstName;
-    this.dailyScore = 0;
-    this.setDailyScore(data);
+    this.dailyScore = data.score || data.todayScore;
     this.setKeyData(data);
   }
 
-  setDailyScore = (data) => {
-    if (data.score || data.todayScore) {
-      this.dailyScore = (data.score || data.todayScore) * 100;
-    }
-  };
-
   setKeyData = (data) => {
+    this.keyData = null;
     if (data.keyData) {
       this.keyData = {
         calories: {

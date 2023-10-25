@@ -10,11 +10,13 @@ export default class SessionsModel {
       6: 'S',
       7: 'D',
     };
-    this.chartData = [];
+    this.setChartData(data);
   }
+
   setChartData = (data) => {
-    if (data.data) {
-      this.chartData = data.data.map((item) => {
+    this.chartData = [];
+    if (data.sessions) {
+      this.chartData = data.sessions.map((item) => {
         return {
           length: item.sessionLength,
           weekday: this.weekdays_fr[item.day],

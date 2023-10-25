@@ -6,15 +6,16 @@ import DataFactory from '../factories/DataFactory';
 export default class UserDataService {
   constructor(userId, params, isMocked) {
     this.userId = userId;
-    this.params = params;
+    this.params = params ? params : '';
     this.isMocked = isMocked;
     this.data = {};
     this.baseUrl = API_BASE_URL;
   }
 
-  init = () => {
+  init = async () => {
     this.buildRequestUrl();
-    this.getData();
+    await this.getData();
+    console.log(this.data);
     if (Object.keys(this.data)) {
       const tryout = new DataFactory(this.params, this.data).model;
       console.log(tryout);
@@ -24,29 +25,25 @@ export default class UserDataService {
   buildRequestUrl = () => {
     if (!this.isMocked) {
       this.requestUrl = `${this.baseUrl}/user/${this.userId}`;
-      this.requestUrl +=
-        this.params && this.params.length ? `/${this.params}` : '';
+      this.requestUrl += this.params ? `/${this.params}` : '';
     }
   };
 
-  getData = () => {
+  getData = async () => {
     if (this.isMocked) {
       this.getMockedData();
     } else {
-      this.getApiData();
+      this.data = await this.getApiData();
     }
   };
 
-  getApiData = () => {
-    axios
-      .get(this.requestUrl)
-      .then((res) => {
-        this.data = res.data.data;
-        console.log(this.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+  getApiData = async () => {
+    try {
+      const resp = await axios.get(this.requestUrl);
+      return resp.data.data;
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   getMockedData = () => {
