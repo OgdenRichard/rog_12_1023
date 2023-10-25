@@ -1,16 +1,25 @@
 import axios from 'axios';
 import mockedData from '../mocks/mockdata.json';
 import { API_BASE_URL } from '../settings/apiSettings';
+import DataFactory from '../factories/DataFactory';
 
-export default class UserData {
+export default class UserDataService {
   constructor(userId, params, isMocked) {
     this.userId = userId;
     this.params = params;
     this.isMocked = isMocked;
     this.data = {};
     this.baseUrl = API_BASE_URL;
-    this.buildRequestUrl();
   }
+
+  init = () => {
+    this.buildRequestUrl();
+    this.getData();
+    if (Object.keys(this.data)) {
+      const tryout = new DataFactory(this.params, this.data).model;
+      console.log(tryout);
+    }
+  };
 
   buildRequestUrl = () => {
     if (!this.isMocked) {

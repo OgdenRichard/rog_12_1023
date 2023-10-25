@@ -9,10 +9,11 @@ export default class PerformanceModel {
       5: 'Vitesse',
       6: 'Intensité',
     };
-    this.chartData = [];
+    this.setChartData(data);
   }
 
   setChartData = (data) => {
+    this.chartData = [];
     if (data.data) {
       this.chartData = data.data.map((item) => {
         return {
