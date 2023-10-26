@@ -10,17 +10,10 @@ function DataFetching({ isMocked }) {
   console.log(performanceData);
   console.log(activityData);
   console.log(sessionsData);
-  /* useEffect(() => {
-    const fetchData = async () => {
-      const data = await new UserDataService(18, '', false).loadData();
-      setData(data);
-    };
-    fetchData();
-  }, [isMocked]); */
 
   return (
     <>
-      <div>{userData.data.firstName}</div>
+      <div>Fetch tryout</div>
     </>
   );
 }
