@@ -2,11 +2,7 @@ import React from 'react';
 import useFetch from '../hooks/useFetch';
 
 function Performance() {
-  const performanceData = useFetch({
-    userId: 18,
-    params: 'performance',
-    isMocked: false,
-  });
+  const performanceData = useFetch(18, 'performance', false);
   console.log('rendering perf');
   return (
     <>
