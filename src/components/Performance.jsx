@@ -17,14 +17,16 @@ function Performance() {
       <div>
         {chartData && (
           <RadarChart
-            outerRadius={90}
+            outerRadius={100}
             width={730}
             height={250}
             data={chartData}
           >
-            <PolarGrid polarAngles={0} />
-            <PolarAngleAxis dataKey="type" />
-            <PolarRadiusAxis angle={30} domain={[0, 150]} tickCount={1} />
+            <PolarGrid
+              polarRadius={[10, 20, 40, 60, 100]}
+              radialLines={false}
+            />
+            <PolarAngleAxis dataKey="type" tick={true} />
             <Radar
               name="Tryout"
               dataKey="value"
