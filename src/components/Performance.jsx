@@ -1,15 +1,9 @@
 import React from 'react';
 import useFetch from '../hooks/useFetch';
-import {
-  RadarChart,
-  PolarGrid,
-  PolarAngleAxis,
-  PolarRadiusAxis,
-  Radar,
-} from 'recharts';
+import { RadarChart, PolarGrid, PolarAngleAxis, Radar } from 'recharts';
 
 function Performance() {
-  const performanceData = useFetch(12, 'performance', false);
+  const performanceData = useFetch(18, 'performance', false);
   const chartData = performanceData.data.chartData;
   console.log(chartData);
   return (

@@ -49,6 +49,5 @@ export default class UserDataService {
       (param) => param[key] === this.userId,
     );
     Object.assign(this.data, ...mock);
-    console.log(this.data);
   };
 }

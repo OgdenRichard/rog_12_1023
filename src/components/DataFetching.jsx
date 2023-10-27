@@ -1,4 +1,3 @@
-import useFetch from '../hooks/useFetch';
 import Activity from './Activity';
 import Performance from './Performance';
 import Sessions from './Sessions';
