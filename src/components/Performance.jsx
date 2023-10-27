@@ -9,7 +9,7 @@ import {
 } from 'recharts';
 
 function Performance() {
-  const performanceData = useFetch(18, 'performance', false);
+  const performanceData = useFetch(12, 'performance', false);
   const chartData = performanceData.data.chartData;
   console.log(chartData);
   return (
@@ -23,7 +23,7 @@ function Performance() {
             data={chartData}
           >
             <PolarGrid
-              polarRadius={[10, 20, 40, 60, 100]}
+              polarRadius={[20, 40, 60, 80, 100]}
               radialLines={false}
             />
             <PolarAngleAxis dataKey="type" tick={true} />
