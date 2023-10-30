@@ -21,7 +21,7 @@ function Sessions() {
             <Tooltip cursor={{ stroke: 'red', strokeWidth: 100 }} />
             <Line
               dataKey="length"
-              type="natural"
+              type="bumpX"
               dot={false}
               strokeWidth={2}
               stroke="#8884d8"

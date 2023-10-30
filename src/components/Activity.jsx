@@ -10,10 +10,20 @@ function Activity() {
     <>
       <div>
         {chartData && (
-          <BarChart width={730} height={250} barGap={10} data={chartData}>
+          <BarChart
+            width={730}
+            height={250}
+            barGap={10}
+            margin={(5, 0, 5, 0)}
+            data={chartData}
+          >
             <CartesianGrid strokeDasharray="3 3" vertical={false} />
-            <XAxis dataKey="key" />
-            <YAxis orientation="right" />
+            <XAxis
+              dataKey="key"
+              tickLine={false}
+              padding={{ left: -37, right: -37 }}
+            />
+            <YAxis orientation="right" axisLine={false} tickLine={false} />
             <Tooltip />
             <Bar
               dataKey="kg"
