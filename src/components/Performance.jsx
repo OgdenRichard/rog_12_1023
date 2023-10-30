@@ -5,7 +5,6 @@ import { RadarChart, PolarGrid, PolarAngleAxis, Radar } from 'recharts';
 function Performance() {
   const performanceData = useFetch(18, 'performance', false);
   const chartData = performanceData.data.chartData;
-  console.log(chartData);
   return (
     <>
       <div>

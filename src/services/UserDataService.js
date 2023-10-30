@@ -15,6 +15,8 @@ export default class UserDataService {
 
   loadSingleRequestData = async () => {
     this.buildRequestUrl();
+    this.setEndpoints();
+    this.getAllUserApiData();
     await this.getSingleRequestData();
     return new DataFactory(this.params, this.data).model;
   };
@@ -31,6 +33,21 @@ export default class UserDataService {
     if (!this.isMocked) {
       this.requestUrl += this.params ? `/${this.params}` : '';
     }
+  };
+
+  getAllUserApiData = async () => {
+    axios.all(this.endpoints.map((endpoint) => axios.get(endpoint))).then(
+      axios.spread(
+        (
+          { data: user },
+          { data: activity },
+          { data: performance },
+          { data: sessions },
+        ) => {
+          console.log({ user, activity, performance, sessions });
+        },
+      ),
+    );
   };
 
   getSingleRequestData = async () => {
