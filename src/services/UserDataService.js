@@ -15,8 +15,8 @@ export default class UserDataService {
 
   loadSingleRequestData = async () => {
     this.buildRequestUrl();
-    this.setEndpoints();
-    this.getAllUserApiData();
+    /* this.setEndpoints();
+    this.getAllUserApiData(); */
     await this.getSingleRequestData();
     return new DataFactory(this.params, this.data).model;
   };
