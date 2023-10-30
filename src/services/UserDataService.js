@@ -1,6 +1,6 @@
 import axios from 'axios';
 import mockedData from '../mocks/mockdata.json';
-import { API_BASE_URL } from '../settings/apiSettings';
+import { API_BASE_URL, API_ENDPOINTS } from '../settings/apiSettings';
 import DataFactory from '../factories/DataFactory';
 
 export default class UserDataService {
@@ -8,32 +8,40 @@ export default class UserDataService {
     this.userId = userId;
     this.params = params ? params : '';
     this.isMocked = isMocked;
+    this.endpoints = [];
     this.data = {};
-    this.baseUrl = API_BASE_URL;
+    this.baseUrl = `${API_BASE_URL}/user/${this.userId}`;
   }
 
-  loadData = async () => {
+  loadSingleRequestData = async () => {
     this.buildRequestUrl();
-    await this.getData();
+    await this.getSingleRequestData();
     return new DataFactory(this.params, this.data).model;
   };
 
+  setEndpoints = () => {
+    const endpoints = API_ENDPOINTS.map(
+      (endpoint) => `${this.baseUrl}/${endpoint}`,
+    );
+    this.endpoints = [this.baseUrl, ...endpoints];
+  };
+
   buildRequestUrl = () => {
+    this.requestUrl = this.baseUrl;
     if (!this.isMocked) {
-      this.requestUrl = `${this.baseUrl}/user/${this.userId}`;
       this.requestUrl += this.params ? `/${this.params}` : '';
     }
   };
 
-  getData = async () => {
+  getSingleRequestData = async () => {
     if (this.isMocked) {
-      this.getMockedData();
+      this.getSingleRequestMockedData();
     } else {
-      this.data = await this.getApiData();
+      this.data = await this.getSingleRequestApiData();
     }
   };
 
-  getApiData = async () => {
+  getSingleRequestApiData = async () => {
     try {
       const resp = await axios.get(this.requestUrl);
       return resp.data.data;
@@ -42,7 +50,7 @@ export default class UserDataService {
     }
   };
 
-  getMockedData = () => {
+  getSingleRequestMockedData = () => {
     const param = this.params.length ? this.params : 'users';
     const key = this.params.length ? 'userId' : 'id';
     const mock = mockedData[param].filter(

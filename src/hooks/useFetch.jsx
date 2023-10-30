@@ -11,7 +11,7 @@ function useFetch(userId, params = '', useMock = false) {
         userId,
         params,
         useMock,
-      ).loadData();
+      ).loadSingleRequestData();
       setData(data);
     };
     fetchData();
