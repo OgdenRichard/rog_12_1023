@@ -2,8 +2,8 @@ import React from 'react';
 import useFetch from '../hooks/useFetch';
 import { LineChart, XAxis, Tooltip, Line } from 'recharts';
 
-function Sessions() {
-  const sessionsData = useFetch(18, 'average-sessions', false);
+function Sessions({ userId }) {
+  const sessionsData = useFetch(userId, 'average-sessions', false);
   const chartData = sessionsData.data.chartData;
   console.log(chartData);
 

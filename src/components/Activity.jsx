@@ -2,8 +2,8 @@ import React from 'react';
 import useFetch from '../hooks/useFetch';
 import { BarChart, CartesianGrid, XAxis, YAxis, Tooltip, Bar } from 'recharts';
 
-function Activity() {
-  const activityData = useFetch(18, 'activity', false);
+function Activity({ userId }) {
+  const activityData = useFetch(userId, 'activity', false);
   const chartData = activityData.data.chartData;
   console.log(chartData);
   return (

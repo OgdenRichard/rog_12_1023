@@ -6,9 +6,9 @@ function DataFetching({ isMocked }) {
   return (
     <>
       <div>Fetch tryout</div>
-      <Activity />
-      <Performance />
-      <Sessions />
+      <Activity userId={18} />
+      <Performance userId={18} />
+      <Sessions userId={18} />
     </>
   );
 }
