@@ -15,17 +15,18 @@ function User({ id }) {
         Bonjour <span className="red_text">{userData.data.firstName}</span>
       </h1>
       <div className="user__main_wrapper">
-        <section>
+        <section className="user__graphs">
           <Activity userId={id} />
           <div className="user__secondary_wrapper">
             <Performance userId={id} />
             <Sessions userId={id} />
           </div>
         </section>
-        <aside>
+        <aside className="tags__wrapper">
           {keyData &&
-            keyData.map((data) => (
+            keyData.map((data, index) => (
               <DataTag
+                key={index}
                 value={data.value}
                 unit={data.unit}
                 name={data.name}
