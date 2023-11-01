@@ -5,7 +5,6 @@ import { BarChart, CartesianGrid, XAxis, YAxis, Tooltip, Bar } from 'recharts';
 function Activity({ userId }) {
   const activityData = useFetch(userId, 'activity', false);
   const chartData = activityData.data.chartData;
-  console.log(chartData);
   return (
     <>
       <div>

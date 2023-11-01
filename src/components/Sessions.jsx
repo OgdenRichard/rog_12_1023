@@ -5,7 +5,6 @@ import { LineChart, XAxis, Tooltip, Line } from 'recharts';
 function Sessions({ userId }) {
   const sessionsData = useFetch(userId, 'average-sessions', false);
   const chartData = sessionsData.data.chartData;
-  console.log(chartData);
 
   return (
     <>

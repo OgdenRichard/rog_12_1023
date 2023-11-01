@@ -16,7 +16,7 @@ const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Root />} errorElement={<ErrorPage />}>
       <Route path="/" element={<Home />} />
-      <Route path="profile" element={<Profile />} />
+      <Route path="profile/18" element={<Profile />} />
       <Route path="profile/:id" element={<Profile />} />
       <Route path="settings" element={<Settings />} />
       <Route path="community" element={<Community />} />

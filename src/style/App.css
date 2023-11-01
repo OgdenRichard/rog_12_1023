@@ -73,6 +73,18 @@ main {
   transform: rotate(-90deg);
 }
 
+.user__main_wrapper {
+  display: flex;
+}
+
+.user__secondary_wrapper {
+  display: flex;
+}
+
+.red_text {
+  color: #e60000;
+}
+
 /* ------------------------------------- RECHARTS ------------------------------------- */
 
 .recharts-polar-angle-axis-ticks :nth-child(4) {
