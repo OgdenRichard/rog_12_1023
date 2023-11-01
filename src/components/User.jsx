@@ -3,10 +3,12 @@ import useFetch from '../hooks/useFetch';
 import Activity from './Activity';
 import Performance from './Performance';
 import Sessions from './Sessions';
+import DataTag from './atoms/DataTag';
 
 function User({ id }) {
   const userData = useFetch(id, '', false);
-  console.log(userData);
+  const keyData = userData.data.keyData;
+  console.log(keyData);
   return (
     <>
       <h1>
@@ -20,7 +22,18 @@ function User({ id }) {
             <Sessions userId={id} />
           </div>
         </section>
-        <aside></aside>
+        <aside>
+          {keyData &&
+            keyData.map((data) => (
+              <DataTag
+                value={data.value}
+                unit={data.unit}
+                name={data.name}
+                image={data.image}
+                color={data.background}
+              />
+            ))}
+        </aside>
       </div>
     </>
   );
