@@ -1,14 +1,20 @@
 import React from 'react';
 import useFetch from '../hooks/useFetch';
-import { RadarChart, PolarGrid, PolarAngleAxis, Radar } from 'recharts';
+import {
+  RadarChart,
+  PolarGrid,
+  PolarAngleAxis,
+  Radar,
+  ResponsiveContainer,
+} from 'recharts';
 
 function Performance({ userId }) {
   const performanceData = useFetch(userId, 'performance', false);
   const chartData = performanceData.data.chartData;
   return (
     <>
-      <div>
-        {chartData && (
+      {chartData && (
+        <ResponsiveContainer width="50%" height="100%">
           <RadarChart
             outerRadius={100}
             width={730}
@@ -28,8 +34,8 @@ function Performance({ userId }) {
               fillOpacity={0.6}
             />
           </RadarChart>
-        )}
-      </div>
+        </ResponsiveContainer>
+      )}
     </>
   );
 }

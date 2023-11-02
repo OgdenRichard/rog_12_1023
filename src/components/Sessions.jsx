@@ -1,6 +1,6 @@
 import React from 'react';
 import useFetch from '../hooks/useFetch';
-import { LineChart, XAxis, Tooltip, Line } from 'recharts';
+import { LineChart, XAxis, Tooltip, Line, ResponsiveContainer } from 'recharts';
 
 function Sessions({ userId }) {
   const sessionsData = useFetch(userId, 'average-sessions', false);
@@ -8,8 +8,8 @@ function Sessions({ userId }) {
 
   return (
     <>
-      <div>
-        {chartData && (
+      {chartData && (
+        <ResponsiveContainer width="50%" height="100%">
           <LineChart
             width={300}
             height={250}
@@ -26,8 +26,8 @@ function Sessions({ userId }) {
               stroke="#8884d8"
             />
           </LineChart>
-        )}
-      </div>
+        </ResponsiveContainer>
+      )}
     </>
   );
 }

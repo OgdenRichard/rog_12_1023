@@ -10,9 +10,11 @@ function User({ id }) {
   const keyData = userData.data.keyData;
   return (
     <>
-      <h1>
-        Bonjour <span className="red_text">{userData.data.firstName}</span>
-      </h1>
+      {userData && (
+        <h1>
+          Bonjour <span className="red_text">{userData.data.firstName}</span>
+        </h1>
+      )}
       <div className="user__main_wrapper">
         <section className="user__graphs">
           <Activity userId={id} />
