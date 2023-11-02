@@ -13,29 +13,34 @@ function Performance({ userId }) {
   const chartData = performanceData.data.chartData;
   return (
     <>
-      {chartData && (
-        <ResponsiveContainer width="50%" height="100%">
-          <RadarChart
-            outerRadius={100}
-            width={730}
-            height={250}
-            data={chartData}
-          >
-            <PolarGrid
-              polarRadius={[20, 40, 60, 80, 100]}
-              radialLines={false}
-            />
-            <PolarAngleAxis dataKey="type" tick={true} />
-            <Radar
-              name="Tryout"
-              dataKey="value"
-              stroke="#8884d8"
-              fill="#8884d8"
-              fillOpacity={0.6}
-            />
-          </RadarChart>
-        </ResponsiveContainer>
-      )}
+      <div className="square_chart_wrapper performance_chart">
+        {chartData && (
+          <ResponsiveContainer width="100%" height="100%">
+            <RadarChart
+              outerRadius={100}
+              width={250}
+              height={250}
+              data={chartData}
+            >
+              <PolarGrid
+                polarRadius={[20, 40, 60, 80, 100]}
+                radialLines={false}
+              />
+              <PolarAngleAxis
+                dataKey="type"
+                tick={{ fontSize: 12, fill: 'white' }}
+              />
+              <Radar
+                name="Performance"
+                dataKey="value"
+                stroke="#E60000"
+                fill="#E60000"
+                fillOpacity={0.6}
+              />
+            </RadarChart>
+          </ResponsiveContainer>
+        )}
+      </div>
     </>
   );
 }

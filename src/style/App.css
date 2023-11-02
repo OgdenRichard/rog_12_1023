@@ -88,7 +88,8 @@ main {
 
 .user__secondary_wrapper {
   display: flex;
-  height: 250px;
+  justify-content: space-between;
+  height: auto;
 }
 
 .user__graphs {
@@ -151,4 +152,18 @@ main {
 .activity_chart__legend {
   color: #74798c;
   padding: 20px;
+}
+
+.performance_chart {
+  background-color: #282d30;
+}
+
+.sessions_chart {
+  background-color: #E60000;
+}
+
+.square_chart_wrapper {
+  width: 325px;
+  height: 325px;
+  border-radius: 5px;
 }
