@@ -4,10 +4,12 @@ import Activity from './Activity';
 import Performance from './Performance';
 import Sessions from './Sessions';
 import DataTag from './atoms/DataTag';
+import UserScore from './UserScore';
 
 function User({ id }) {
   const userData = useFetch(id, '', false);
   const keyData = userData.data.keyData;
+  // console.log(userData);
   return (
     <>
       {userData && (
@@ -19,8 +21,9 @@ function User({ id }) {
         <section className="user__graphs">
           <Activity userId={id} />
           <div className="user__secondary_wrapper">
-            <Performance userId={id} />
             <Sessions userId={id} />
+            <Performance userId={id} />
+            <UserScore chartData={userData.data.dailyScore} />
           </div>
         </section>
         <aside className="tags__wrapper">

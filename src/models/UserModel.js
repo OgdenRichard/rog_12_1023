@@ -6,7 +6,16 @@ import lipids from '../assets/images/lipids.svg';
 export default class UserModel {
   constructor(data) {
     this.firstName = data.userInfos.firstName;
-    this.dailyScore = data.score || data.todayScore;
+    this.dailyScore = [
+      {
+        score: data.score || data.todayScore,
+        fill: 'red',
+      },
+      {
+        score: 0.88,
+        fill: 'transparent',
+      },
+    ];
     this.setKeyData(data);
   }
 
