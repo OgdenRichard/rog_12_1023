@@ -1,14 +1,23 @@
 import React from 'react';
 import useFetch from '../hooks/useFetch';
-import { BarChart, CartesianGrid, XAxis, YAxis, Tooltip, Bar } from 'recharts';
+import {
+  BarChart,
+  CartesianGrid,
+  XAxis,
+  YAxis,
+  Tooltip,
+  Legend,
+  Bar,
+  ResponsiveContainer,
+} from 'recharts';
 
 function Activity({ userId }) {
   const activityData = useFetch(userId, 'activity', false);
   const chartData = activityData.data.chartData;
   return (
     <>
-      <div>
-        {chartData && (
+      {chartData && (
+        <ResponsiveContainer width="100%" height="50%">
           <BarChart
             width={730}
             height={250}
@@ -24,21 +33,32 @@ function Activity({ userId }) {
             />
             <YAxis orientation="right" axisLine={false} tickLine={false} />
             <Tooltip />
+            <Legend
+              align="right"
+              verticalAlign="top"
+              height={36}
+              iconType="circle"
+              formatter={(value, entry, index) => (
+                <span className="activity_chart__legend">{value}</span>
+              )}
+            />
             <Bar
+              name="Poids (kg)"
               dataKey="kg"
               barSize={10}
               radius={[5, 5, 0, 0]}
               fill="#282D30"
             />
             <Bar
+              name="Calories brûlées (kCal)"
               dataKey="cal"
               barSize={10}
               radius={[5, 5, 0, 0]}
               fill="#E60000"
             />
           </BarChart>
-        )}
-      </div>
+        </ResponsiveContainer>
+      )}
     </>
   );
 }

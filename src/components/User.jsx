@@ -8,7 +8,6 @@ import DataTag from './atoms/DataTag';
 function User({ id }) {
   const userData = useFetch(id, '', false);
   const keyData = userData.data.keyData;
-  console.log(keyData);
   return (
     <>
       <h1>

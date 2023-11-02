@@ -36,7 +36,8 @@ nav a {
 }
 
 main {
-  margin-left: 120px;
+  margin-top: 30px;
+  margin-left: 150px;
 }
 
 .sidebar {
@@ -140,4 +141,9 @@ main {
 
 .recharts-polar-angle-axis-ticks :nth-child(4) {
   transform: translateY(0.5rem);
+}
+
+.activity_chart__legend {
+  color: #74798c;
+  padding: 20px;
 }
