@@ -8,6 +8,7 @@ import {
   Tooltip,
   Legend,
   Bar,
+  Text,
   ResponsiveContainer,
 } from 'recharts';
 
@@ -38,6 +39,7 @@ function Activity({ userId }) {
               verticalAlign="top"
               height={36}
               iconType="circle"
+              wrapperStyle={{ top: 0, right: 25 }}
               formatter={(value, entry, index) => (
                 <span className="activity_chart__legend">{value}</span>
               )}
