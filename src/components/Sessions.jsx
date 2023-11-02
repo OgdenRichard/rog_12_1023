@@ -21,7 +21,13 @@ function Sessions({ userId }) {
                 dataKey="weekday"
                 axisLine={false}
                 tickLine={false}
-                tick={{ fontSize: 12, fill: 'white', dx: -5 }}
+                minTickGap={2}
+                interval="preserveStartEnd"
+                tick={{
+                  fontSize: 12,
+                  fill: 'white',
+                  textAnchor: 'left',
+                }}
               />
               <Tooltip cursor={{ stroke: 'red', strokeWidth: 100 }} />
               <Line
