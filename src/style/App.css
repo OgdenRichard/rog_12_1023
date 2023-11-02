@@ -19,6 +19,10 @@ header {
   align-items: center;
 }
 
+header img {
+  margin-left: 1em;
+}
+
 nav {
   display: flex;
   justify-content: space-between;
@@ -82,7 +86,7 @@ main {
   display: flex;
 }
 
-.user__graphs{
+.user__graphs {
   display: flex;
   flex-direction: column;
   justify-content: space-between;

@@ -8,10 +8,10 @@ export const Navbar = () => {
   };
   return (
     <nav>
-      <NavLink style={navLinkStyle} to={'/'}>
+      <NavLink style={navLinkStyle} to={'/home'}>
         Accueil
       </NavLink>
-      <NavLink style={navLinkStyle} to={'/profile/18'}>
+      <NavLink style={navLinkStyle} to={'/profile'}>
         Profil
       </NavLink>
       <NavLink style={navLinkStyle} to={'/settings'}>
