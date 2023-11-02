@@ -26,7 +26,6 @@ function Sessions({ userId }) {
                 tick={{
                   fontSize: 12,
                   fill: 'white',
-                  textAnchor: 'left',
                 }}
               />
               <Tooltip cursor={{ stroke: 'red', strokeWidth: 100 }} />
