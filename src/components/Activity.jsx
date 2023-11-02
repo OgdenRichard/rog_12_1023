@@ -29,7 +29,7 @@ function Activity({ userId }) {
             <XAxis
               dataKey="key"
               tickLine={false}
-              padding={{ left: -37, right: -37 }}
+              padding={{ left: -40, right: -40 }}
             />
             <YAxis orientation="right" axisLine={false} tickLine={false} />
             <Tooltip />

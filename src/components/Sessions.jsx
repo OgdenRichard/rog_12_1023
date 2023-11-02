@@ -28,7 +28,7 @@ function Sessions({ userId }) {
                   fill: 'white',
                 }}
               />
-              <Tooltip cursor={{ stroke: 'red', strokeWidth: 100 }} />
+              <Tooltip cursor={{ stroke: 'red', strokeWidth: 150 }} />
               <Line
                 dataKey="length"
                 type="bumpX"

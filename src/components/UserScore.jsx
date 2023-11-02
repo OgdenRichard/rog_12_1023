@@ -14,8 +14,8 @@ function UserScore({ chartData }) {
                 dataKey="score"
                 cx="50%"
                 cy="50%"
-                startAngle={180}
-                endAngle={-360}
+                startAngle={220}
+                endAngle={0}
                 innerRadius={60}
                 outerRadius={80}
                 fill="#82ca9d"

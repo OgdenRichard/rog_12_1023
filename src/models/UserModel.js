@@ -13,7 +13,7 @@ export default class UserModel {
       },
       {
         score: 0.88,
-        fill: 'transparent',
+        fill: 'blue',
       },
     ];
     this.setKeyData(data);
