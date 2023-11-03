@@ -8,12 +8,12 @@ export default class UserModel {
     this.firstName = data.userInfos.firstName;
     this.dailyScore = [
       {
-        score: data.score || data.todayScore,
-        fill: 'red',
+        score: 0.88,
+        fill: 'transparent',
       },
       {
-        score: 0.88,
-        fill: 'blue',
+        score: data.score || data.todayScore,
+        fill: '#E60000',
       },
     ];
     this.setKeyData(data);
