@@ -7,7 +7,6 @@ export default class UserModel {
   constructor(data) {
     this.firstName = data.userInfos.firstName;
     this.userScore = data.score || data.todayScore;
-    this.scoreData = [];
     this.setScoreData();
     this.setKeyData(data);
   }
@@ -49,14 +48,15 @@ export default class UserModel {
   };
 
   setScoreData = () => {
-    const completionGap = 1 - this.userScore;
-    this.scoreData.push({
-      score: completionGap,
-      fill: 'transparent',
-    });
-    this.scoreData.push({
-      score: this.userScore,
-      fill: '#E60000',
-    });
+    this.scoreData = [
+      {
+        score: 1,
+        fill: 'transparent',
+      },
+      {
+        score: this.userScore,
+        fill: '#E60000',
+      },
+    ];
   };
 }

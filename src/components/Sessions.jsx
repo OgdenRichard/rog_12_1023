@@ -12,8 +12,8 @@ function Sessions({ userId }) {
         {chartData && (
           <ResponsiveContainer width="100%" height="100%">
             <LineChart
-              width={300}
-              height={250}
+              width={100}
+              height={100}
               data={chartData}
               margin={{ top: 0, right: 0, left: 0, bottom: 0 }}
             >

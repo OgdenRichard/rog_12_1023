@@ -19,7 +19,9 @@ function User({ id }) {
       )}
       <div className="user__main_wrapper">
         <section className="user__graphs">
-          <Activity userId={id} />
+          <div className="user__activity_wrapper">
+            <Activity userId={id} />
+          </div>
           <div className="user__secondary_wrapper">
             <Sessions userId={id} />
             <Performance userId={id} />

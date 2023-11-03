@@ -9,11 +9,11 @@ function UserScore({ chartData }) {
           <RadialBarChart
             width={730}
             height={250}
-            innerRadius="0%"
-            outerRadius="100%"
+            innerRadius="5%"
+            outerRadius="120%"
             data={chartData}
-            startAngle={200}
-            endAngle={-360}
+            startAngle={190}
+            endAngle={-190}
             barSize={12}
           >
             <RadialBar

@@ -18,8 +18,8 @@ function Performance({ userId }) {
           <ResponsiveContainer width="100%" height="100%">
             <RadarChart
               outerRadius={100}
-              width={250}
-              height={250}
+              width={100}
+              height={100}
               data={chartData}
             >
               <PolarGrid

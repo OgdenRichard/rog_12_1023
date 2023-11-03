@@ -19,18 +19,14 @@ function Activity({ userId }) {
       {chartData && (
         <ResponsiveContainer width="100%" height="50%">
           <BarChart
-            width={730}
-            height={250}
+            width={100}
+            height={100}
             barGap={10}
             margin={(5, 0, 5, 0)}
             data={chartData}
           >
             <CartesianGrid strokeDasharray="3 3" vertical={false} />
-            <XAxis
-              dataKey="key"
-              tickLine={false}
-              padding={{ left: -40, right: -40 }}
-            />
+            <XAxis dataKey="key" tickLine={false} />
             <YAxis orientation="right" axisLine={false} tickLine={false} />
             <Tooltip />
             <Legend
