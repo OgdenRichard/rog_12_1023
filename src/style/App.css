@@ -187,3 +187,8 @@ main {
   margin-bottom: 25px;
   border-radius: 5px;
 }
+
+.activity-tooltip {
+  padding: 1em 0;
+  background-color: #e60000;
+}
