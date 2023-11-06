@@ -90,9 +90,12 @@ main {
 }
 
 .user__activity_wrapper {
-  height: 500px;
+  height: 400px;
   display: flex;
   align-items: center;
+  margin-bottom: 50px;
+  background-color: #fbfbfb;
+  border-radius: 10px;
 }
 
 .user__secondary_wrapper {
@@ -105,16 +108,17 @@ main {
 }
 
 .user__graphs {
-  display: flex;
   width: 70%;
+  display: flex;
   flex-direction: column;
+  justify-content: space-between;
 }
 
 .tags__wrapper {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 100%;
+  padding-left: 20px;
 }
 
 .datatag {
@@ -173,8 +177,13 @@ main {
   background-color: #e60000;
 }
 
+.score__chart {
+  background-color: #fbfbfb;
+}
+
 .square_chart_wrapper {
   width: 250px;
   height: 250px;
+  margin-bottom: 25px;
   border-radius: 5px;
 }

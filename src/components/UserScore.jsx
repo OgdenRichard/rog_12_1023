@@ -4,7 +4,7 @@ import { RadialBarChart, RadialBar, ResponsiveContainer } from 'recharts';
 function UserScore({ chartData }) {
   return (
     <>
-      <div className="square_chart_wrapper">
+      <div className="square_chart_wrapper score__chart">
         <ResponsiveContainer width="100%" height="100%">
           <RadialBarChart
             width={730}
