@@ -90,10 +90,12 @@ main {
 }
 
 .user__activity_wrapper {
+  position: relative;
   height: 400px;
   display: flex;
   align-items: center;
   margin-bottom: 50px;
+  padding-top: 20px;
   background-color: #fbfbfb;
   border-radius: 10px;
 }
@@ -191,4 +193,28 @@ main {
 .activity-tooltip {
   padding: 1em 0;
   background-color: #e60000;
+}
+
+.activity_graph__title {
+  position: absolute;
+  top: 18px;
+  left: 50px;
+  margin: 0;
+}
+
+/* ------------------------------------ MEDIA QUERIES ------------------------------------ */
+
+@media only screen and (width < 1120px) {
+  .activity_graph__title {
+    top: 20px;
+    left: 25px;
+    font-size: 17px;
+  }
+}
+
+@media only screen and (width < 1050px) {
+  .activity_graph__title {
+    left: 20px;
+    font-size: 16px;
+  }
 }

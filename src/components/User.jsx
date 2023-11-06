@@ -20,6 +20,7 @@ function User({ id }) {
       <div className="user__main_wrapper">
         <section className="user__graphs">
           <div className="user__activity_wrapper">
+            <h3 className="activity_graph__title">Activité quotidienne</h3>
             <Activity userId={id} />
           </div>
           <div className="user__secondary_wrapper">

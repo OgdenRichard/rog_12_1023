@@ -14,13 +14,17 @@ import {
 function Activity({ userId }) {
   const activityData = useFetch(userId, 'activity', false);
   const chartData = activityData.data.chartData;
-  const CustomTooltip = ({ active, payload, label }) => {
+
+  const CustomTooltip = ({ active, payload }) => {
     if (active && payload && payload.length) {
       return (
         <div className="activity-tooltip">
           <div>
-            {payload.map((pld) => (
-              <div style={{ display: 'block', fontSize: 14, padding: 10 }}>
+            {payload.map((pld, index) => (
+              <div
+                key={index}
+                style={{ display: 'block', fontSize: 14, padding: 10 }}
+              >
                 <div style={{ color: 'white' }}>
                   {pld.value}
                   {pld.dataKey === 'kg' ? 'kg' : 'Kcal'}
@@ -31,9 +35,9 @@ function Activity({ userId }) {
         </div>
       );
     }
-
     return null;
   };
+
   return (
     <>
       {chartData && (
@@ -42,7 +46,7 @@ function Activity({ userId }) {
             width={100}
             height={100}
             barGap={10}
-            margin={(5, 0, 5, 0)}
+            margin={{ top: 20, right: 5, bottom: 5, left: 5 }}
             data={chartData}
           >
             <CartesianGrid strokeDasharray="3 3" vertical={false} />
@@ -60,7 +64,7 @@ function Activity({ userId }) {
               tickLine={false}
               tick={false}
             />
-            <Tooltip content={<CustomTooltip />} />
+            <Tooltip content={<CustomTooltip />} cursor={{ fill: '#C4C4C4' }} />
             <Legend
               align="right"
               verticalAlign="top"
