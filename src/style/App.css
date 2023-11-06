@@ -37,7 +37,7 @@ nav a {
 
 main {
   margin-top: 30px;
-  margin-left: 150px;
+  margin-left: 100px;
 }
 
 .sidebar {
@@ -78,11 +78,15 @@ main {
   transform: rotate(-90deg);
 }
 
+.user__main_wrapper,
+.user__title {
+  padding: 0 50px;
+}
+
 .user__main_wrapper {
   display: flex;
   justify-content: space-between;
   width: 100%;
-  padding: 0 50px;
 }
 
 .user__activity_wrapper {

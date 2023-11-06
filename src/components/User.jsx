@@ -13,7 +13,7 @@ function User({ id }) {
   return (
     <>
       {userData && (
-        <h1>
+        <h1 className="user__title">
           Bonjour <span className="red_text">{userData.data.firstName}</span>
         </h1>
       )}
