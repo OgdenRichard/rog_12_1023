@@ -1,12 +1,11 @@
 import { useRouteError } from 'react-router-dom';
-import { Navbar } from '../components/Navbar';
-import { Footer } from '../components/Footer';
+import SideBar from '../layouts/SideBar';
 
 export function ErrorPage() {
   const error = useRouteError();
   return (
-    <>
-      <Navbar />
+    <main>
+      <SideBar />
       <div id="error-page">
         <h1>Erreur</h1>
         <h2>Sorry, an unexpected error has occurred.</h2>
@@ -15,7 +14,6 @@ export function ErrorPage() {
           <i>{error.statusText || error.message}</i>
         </p>
       </div>
-      <Footer />
-    </>
+    </main>
   );
 }
