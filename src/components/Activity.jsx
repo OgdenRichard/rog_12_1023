@@ -17,7 +17,7 @@ function Activity({ userId }) {
   return (
     <>
       {chartData && (
-        <ResponsiveContainer width="100%" height="50%">
+        <ResponsiveContainer width="100%" height="100%">
           <BarChart
             width={100}
             height={100}
@@ -27,7 +27,19 @@ function Activity({ userId }) {
           >
             <CartesianGrid strokeDasharray="3 3" vertical={false} />
             <XAxis dataKey="key" tickLine={false} />
-            <YAxis orientation="right" axisLine={false} tickLine={false} />
+            <YAxis
+              yAxisId="right-axis"
+              orientation="right"
+              axisLine={false}
+              tickLine={false}
+            />
+            <YAxis
+              yAxisId="left-axis"
+              orientation="left"
+              axisLine={false}
+              tickLine={false}
+              tick={false}
+            />
             <Tooltip />
             <Legend
               align="right"
@@ -40,6 +52,7 @@ function Activity({ userId }) {
               )}
             />
             <Bar
+              yAxisId="right-axis"
               name="Poids (kg)"
               dataKey="kg"
               barSize={10}
@@ -47,6 +60,7 @@ function Activity({ userId }) {
               fill="#282D30"
             />
             <Bar
+              yAxisId="left-axis"
               name="Calories brûlées (kCal)"
               dataKey="cal"
               barSize={10}
