@@ -54,6 +54,8 @@ function Activity({ userId }) {
             <YAxis
               yAxisId="right-axis"
               orientation="right"
+              domain={['dataMin - 1', 'auto']}
+              tickCount={3}
               axisLine={false}
               tickLine={false}
             />
