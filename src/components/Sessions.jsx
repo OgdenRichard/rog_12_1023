@@ -22,16 +22,35 @@ function Sessions({ userId }) {
               width={100}
               height={100}
               data={chartData}
-              margin={{ top: 0, right: 0, left: -60, bottom: 0 }}
+              margin={{ top: 0, right: 0, left: 0, bottom: 0 }}
             >
+              <text
+                x={100}
+                y={50}
+                className="score__title"
+                fill="#ff8181"
+                textAnchor="middle"
+                dominantBaseline="central"
+              >
+                <tspan fontSize="18">Durée moyenne des</tspan>
+              </text>
+              <text
+                x={53}
+                y={75}
+                className="score__title"
+                fill="#ff8181"
+                textAnchor="middle"
+                dominantBaseline="central"
+              >
+                <tspan fontSize="18">sessions</tspan>
+              </text>
               <YAxis
-                orientation="left"
+                hide={true}
+                dataKey="length"
                 domain={['dataMin', 'dataMax +20']}
-                axisLine={false}
-                tickLine={false}
-                tick={false}
               />
               <XAxis
+                className="fuck"
                 dataKey="weekday"
                 axisLine={false}
                 tickLine={false}
@@ -42,7 +61,7 @@ function Sessions({ userId }) {
                   fill: 'white',
                 }}
                 tickMargin={5}
-                padding={{ left: 0, right: 0 }}
+                padding={{ left: 10, right: 10 }}
               />
               <Tooltip cursor={{ stroke: 'red', strokeWidth: 150 }} />
               <Line
