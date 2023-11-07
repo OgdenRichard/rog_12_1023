@@ -180,7 +180,13 @@ main {
 }
 
 .score__chart {
-  background-color: #fbfbfb;
+  display: flex;
+  align-items: center;
+  background-color: #898989;
+}
+
+.score__title {
+  color: blue;
 }
 
 .square_chart_wrapper {
