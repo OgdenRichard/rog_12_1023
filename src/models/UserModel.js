@@ -50,7 +50,7 @@ export default class UserModel {
   setScoreData = () => {
     this.scoreData = [
       {
-        score: 0.3,
+        score: 1 - this.userScore,
         fill: 'transparent',
       },
       {

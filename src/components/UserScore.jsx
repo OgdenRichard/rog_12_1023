@@ -2,7 +2,6 @@ import React from 'react';
 import { RadialBarChart, RadialBar, ResponsiveContainer } from 'recharts';
 
 function UserScore({ chartData }) {
-  console.log(chartData);
   return (
     <>
       <div className="square_chart_wrapper score__chart">
@@ -19,6 +18,16 @@ function UserScore({ chartData }) {
               barSize={12}
             >
               <text
+                x={55}
+                y={50}
+                className="score__title"
+                fill="black"
+                textAnchor="middle"
+                dominantBaseline="central"
+              >
+                <tspan fontSize="18">Score</tspan>
+              </text>
+              <text
                 x={170}
                 y={150}
                 className="score__title"
@@ -31,7 +40,7 @@ function UserScore({ chartData }) {
               <text
                 x={162}
                 y={190}
-                fill="black"
+                fill="#74798C"
                 textAnchor="middle"
                 dominantBaseline="central"
               >
