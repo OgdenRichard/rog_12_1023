@@ -15,13 +15,14 @@ export default class PerformanceModel {
   setChartData = (data) => {
     this.chartData = [];
     if (data.data) {
-      this.chartData = data.data.map((item) => {
+      const chartData = data.data.map((item) => {
         return {
           key: this.userId,
           value: item.value,
           type: this.types_fr[item.kind],
         };
       });
+      this.chartData = chartData.reverse();
     }
   };
 }
