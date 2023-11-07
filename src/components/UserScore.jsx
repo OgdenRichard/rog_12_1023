@@ -19,13 +19,23 @@ function UserScore({ chartData }) {
               barSize={12}
             >
               <text
-                x={150}
-                y={175}
+                x={170}
+                y={150}
+                className="score__title"
                 fill="black"
                 textAnchor="middle"
                 dominantBaseline="central"
               >
                 <tspan fontSize="32">{chartData[1].score * 100}%</tspan>
+              </text>
+              <text
+                x={162}
+                y={190}
+                fill="black"
+                textAnchor="middle"
+                dominantBaseline="central"
+              >
+                <tspan fontSize="16">de votre objectif</tspan>
               </text>
               <RadialBar
                 dataKey="score"

@@ -186,7 +186,7 @@ main {
 }
 
 .score__title {
-  color: blue;
+  font-weight: bold;
 }
 
 .square_chart_wrapper {
