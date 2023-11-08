@@ -9,13 +9,15 @@ import UserScore from './UserScore';
 function User({ id }) {
   const userData = useFetch(id, '', false);
   const keyData = userData.data.keyData;
-  // console.log(userData);
   return (
     <>
       {userData && (
-        <h1 className="user__title">
-          Bonjour <span className="red_text">{userData.data.firstName}</span>
-        </h1>
+        <div className="user__title">
+          <h1>
+            Bonjour <span className="red_text">{userData.data.firstName}</span>
+          </h1>
+          <p>Félicitations vous avez explosé vos objectifs hier 💩</p>
+        </div>
       )}
       <div className="user__main_wrapper">
         <section className="user__graphs">
