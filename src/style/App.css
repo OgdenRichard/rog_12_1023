@@ -177,7 +177,16 @@ main {
 }
 
 .sessions_chart {
+  position: relative;
   background-color: #e60000;
+}
+
+.sessions__title {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 2;
+  color: #ff8181;
 }
 
 .score__chart {
