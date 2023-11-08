@@ -189,6 +189,11 @@ main {
   color: #ff8181;
 }
 
+.sessions__tooltip {
+  font-weight: bold;
+  background-color: white;
+}
+
 .score__chart {
   display: flex;
   align-items: center;

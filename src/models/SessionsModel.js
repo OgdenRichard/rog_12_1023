@@ -18,7 +18,7 @@ export default class SessionsModel {
     if (data.sessions) {
       this.chartData = data.sessions.map((item) => {
         return {
-          length: item.sessionLength,
+          time: item.sessionLength,
           weekday: this.weekdays_fr[item.day],
         };
       });

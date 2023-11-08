@@ -13,6 +13,26 @@ function Sessions({ userId }) {
   const sessionsData = useFetch(userId, 'average-sessions', false);
   const chartData = sessionsData.data.chartData;
 
+  const CustomTooltip = ({ active, payload }) => {
+    if (active && payload && payload.length) {
+      return (
+        <div className="sessions__tooltip">
+          <div>
+            {payload.map((pld, index) => (
+              <div
+                key={index}
+                style={{ display: 'block', fontSize: 12, padding: 10 }}
+              >
+                <div style={{ color: 'black' }}>{pld.value} min</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      );
+    }
+    return null;
+  };
+
   return (
     <>
       <div className="square_chart_wrapper sessions_chart">
@@ -27,11 +47,7 @@ function Sessions({ userId }) {
               data={chartData}
               margin={{ top: 0, right: 0, left: 0, bottom: 0 }}
             >
-              <YAxis
-                hide={true}
-                dataKey="length"
-                domain={['dataMin', 'dataMax +20']}
-              />
+              <YAxis hide={true} dataKey="time" domain={[0, 'dataMax + 30']} />
               <XAxis
                 dataKey="weekday"
                 axisLine={false}
@@ -45,9 +61,13 @@ function Sessions({ userId }) {
                 tickMargin={5}
                 padding={{ left: 10, right: 10 }}
               />
-              <Tooltip cursor={{ stroke: 'red', strokeWidth: 150 }} />
+              <Tooltip
+                content={<CustomTooltip />}
+                cursor={{ stroke: 'red', strokeWidth: 150 }}
+                viewBox={{ x: 0, y: 0, width: 400, height: 400 }}
+              />
               <Line
-                dataKey="length"
+                dataKey="time"
                 type="bumpX"
                 dot={false}
                 strokeWidth={2}
