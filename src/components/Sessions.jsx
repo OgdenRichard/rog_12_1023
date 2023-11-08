@@ -63,13 +63,19 @@ function Sessions({ userId }) {
               />
               <Tooltip
                 content={<CustomTooltip />}
-                cursor={{ stroke: 'red', strokeWidth: 150 }}
+                cursor={{ stroke: '#d80303', strokeWidth: 150 }}
                 viewBox={{ x: 0, y: 0, width: 400, height: 400 }}
               />
               <Line
                 dataKey="time"
                 type="bumpX"
                 dot={false}
+                activeDot={{
+                  stroke: '#f2f2f294',
+                  strokeWidth: 10,
+                  r: 5,
+                  fill: 'white',
+                }}
                 strokeWidth={2}
                 stroke="#ff8181"
               />
