@@ -83,6 +83,14 @@ main {
   padding: 0 50px;
 }
 
+.user__title {
+  padding-bottom: 20px;
+}
+
+.user__title p {
+  font-weight: 600;
+}
+
 .user__main_wrapper {
   display: flex;
   justify-content: space-between;
