@@ -32,7 +32,7 @@ function User() {
           <div className="user__secondary_wrapper">
             <Sessions />
             <Performance />
-            {userData && <UserScore chartData={userData.data.scoreData} />}
+            <UserScore chartData={userData.data.scoreData} />
           </div>
         </section>
         <aside className="tags__wrapper">

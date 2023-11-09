@@ -50,6 +50,7 @@ export default class UserDataService {
 
   getSingleRequestData = async () => {
     if (this.isMocked) {
+      console.log(`fetching ${this.params}`);
       this.getSingleRequestMockedData();
     } else {
       this.data = await this.getSingleRequestApiData();
@@ -61,7 +62,6 @@ export default class UserDataService {
       const resp = await axios.get(this.requestUrl);
       return resp.data.data;
     } catch (err) {
-      //console.log(err);
       throw new Error(err);
     }
   };
