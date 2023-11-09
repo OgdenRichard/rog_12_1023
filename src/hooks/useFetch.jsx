@@ -7,16 +7,21 @@ function useFetch(userId, params = '', useMock = false) {
 
   useEffect(() => {
     const fetchData = async () => {
-      const data = await new UserDataService(
-        userId,
-        params,
-        useMock,
-      ).loadSingleRequestData();
-      setData(data);
+      try {
+        const data = await new UserDataService(
+          userId,
+          params,
+          useMock,
+        ).loadSingleRequestData();
+        setData(data);
+      } catch (err) {
+        console.log(err.message);
+        setError(true);
+      }
     };
     fetchData();
   }, [userId, params, useMock]);
-  return { data };
+  return { data, error };
 }
 
 export default useFetch;
