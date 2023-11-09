@@ -73,8 +73,9 @@ main {
   z-index: 0;
   width: auto;
   margin: auto;
-  color: white;
+  font-size: 0.9em;
   white-space: nowrap;
+  color: white;
   transform: rotate(-90deg);
 }
 
