@@ -1,4 +1,5 @@
 import React from 'react';
+import { useEffect } from 'react';
 import {
   createBrowserRouter,
   Route,
@@ -30,6 +31,9 @@ const router = createBrowserRouter(
 );
 
 function App() {
+  useEffect(() => {
+    document.title = 'SportSee';
+  }, []);
   return (
     <ApiContext.Provider
       value={{ userId: CONNECTED_USERID, useMock: USE_MOCK }}
