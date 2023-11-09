@@ -166,8 +166,14 @@ main {
   border-radius: 5px;
 }
 
-.red_text {
+.red_text,
+.error__display {
   color: #e60000;
+}
+
+.error__display {
+  font-size: 18px;
+  font-weight: bold;
 }
 
 /* ------------------------------------- RECHARTS ------------------------------------- */
@@ -216,6 +222,9 @@ main {
 .square_chart_wrapper {
   width: 325px;
   height: 325px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
   margin-left: 5px;
   margin-bottom: 25px;
   border-radius: 5px;

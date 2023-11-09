@@ -1,5 +1,6 @@
 import React from 'react';
 import useFetch from '../../hooks/useFetch';
+import FetchError from '../atoms/FetchError';
 import {
   RadarChart,
   PolarGrid,
@@ -9,12 +10,12 @@ import {
 } from 'recharts';
 
 function Performance({ userId }) {
-  const performanceData = useFetch(userId, 'performance', false);
+  const performanceData = useFetch(userId, 'perfermance', false);
   const chartData = performanceData.data.chartData;
   return (
     <>
       <div className="square_chart_wrapper performance_chart">
-        {chartData && (
+        {(chartData && (
           <ResponsiveContainer width="100%" height="100%">
             <RadarChart
               outerRadius={120}
@@ -39,7 +40,8 @@ function Performance({ userId }) {
               />
             </RadarChart>
           </ResponsiveContainer>
-        )}
+        )) ||
+          (performanceData.error && <FetchError />)}
       </div>
     </>
   );
