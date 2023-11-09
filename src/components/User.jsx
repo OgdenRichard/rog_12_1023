@@ -5,9 +5,13 @@ import Performance from './charts/Performance';
 import Sessions from './charts/Sessions';
 import DataTag from './atoms/DataTag';
 import UserScore from './charts/UserScore';
+import { UserContext, DataContext } from '../App';
+import { useContext } from 'react';
 
-function User({ id }) {
-  const userData = useFetch(id, '', false);
+function User() {
+  const userId = useContext(UserContext);
+  const useMock = useContext(DataContext);
+  const userData = useFetch(userId, '', useMock);
   const keyData = userData.data.keyData;
   return (
     <>
@@ -23,11 +27,11 @@ function User({ id }) {
         <section className="user__graphs">
           <div className="user__activity_wrapper">
             <h3 className="activity_graph__title">Activité quotidienne</h3>
-            <Activity userId={id} />
+            <Activity />
           </div>
           <div className="user__secondary_wrapper">
-            <Sessions userId={id} />
-            <Performance userId={id} />
+            <Sessions />
+            <Performance />
             {userData && <UserScore chartData={userData.data.scoreData} />}
           </div>
         </section>

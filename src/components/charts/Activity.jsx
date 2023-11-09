@@ -1,5 +1,7 @@
 import React from 'react';
 import useFetch from '../../hooks/useFetch';
+import { UserContext, DataContext } from '../../App';
+import { useContext } from 'react';
 import {
   BarChart,
   CartesianGrid,
@@ -11,8 +13,10 @@ import {
   ResponsiveContainer,
 } from 'recharts';
 
-function Activity({ userId }) {
-  const activityData = useFetch(userId, 'activity', false);
+function Activity() {
+  const userId = useContext(UserContext);
+  const useMock = useContext(DataContext);
+  const activityData = useFetch(userId, 'activity', useMock);
   const chartData = activityData.data.chartData;
 
   const CustomTooltip = ({ active, payload }) => {

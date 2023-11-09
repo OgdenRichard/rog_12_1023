@@ -1,3 +1,4 @@
+import React from 'react';
 import {
   createBrowserRouter,
   Route,
@@ -12,7 +13,10 @@ import './style/App.css';
 import Profile from './components/pages/Profile';
 import Settings from './components/pages/Settings';
 import Community from './components/pages/Community';
-import { CONNECTED_USERID } from './settings/apiSettings';
+import { CONNECTED_USERID, USE_MOCK } from './settings/apiSettings';
+
+export const UserContext = React.createContext();
+export const DataContext = React.createContext();
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -27,7 +31,13 @@ const router = createBrowserRouter(
 );
 
 function App() {
-  return <RouterProvider router={router} />;
+  return (
+    <UserContext.Provider value={CONNECTED_USERID}>
+      <DataContext.Provider value={USE_MOCK}>
+        <RouterProvider router={router} />
+      </DataContext.Provider>
+    </UserContext.Provider>
+  );
 }
 
 export default App;

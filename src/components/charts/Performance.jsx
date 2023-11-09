@@ -1,6 +1,8 @@
 import React from 'react';
 import useFetch from '../../hooks/useFetch';
 import FetchError from '../atoms/FetchError';
+import { UserContext, DataContext } from '../../App';
+import { useContext } from 'react';
 import {
   RadarChart,
   PolarGrid,
@@ -9,8 +11,10 @@ import {
   ResponsiveContainer,
 } from 'recharts';
 
-function Performance({ userId }) {
-  const performanceData = useFetch(userId, 'perfermance', false);
+function Performance() {
+  const userId = useContext(UserContext);
+  const useMock = useContext(DataContext);
+  const performanceData = useFetch(userId, 'performance', useMock);
   const chartData = performanceData.data.chartData;
   return (
     <>
