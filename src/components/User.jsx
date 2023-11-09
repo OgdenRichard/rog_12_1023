@@ -1,10 +1,10 @@
 import React from 'react';
 import useFetch from '../hooks/useFetch';
-import Activity from './Activity';
-import Performance from './Performance';
-import Sessions from './Sessions';
+import Activity from './charts/Activity';
+import Performance from './charts/Performance';
+import Sessions from './charts/Sessions';
 import DataTag from './atoms/DataTag';
-import UserScore from './UserScore';
+import UserScore from './charts/UserScore';
 
 function User({ id }) {
   const userData = useFetch(id, '', false);
