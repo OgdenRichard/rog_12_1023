@@ -1,6 +1,6 @@
 import React from 'react';
 import useFetch from '../../hooks/useFetch';
-import { UserContext, DataContext } from '../../App';
+import { ApiContext } from '../../App';
 import { useContext } from 'react';
 import {
   BarChart,
@@ -14,9 +14,8 @@ import {
 } from 'recharts';
 
 function Activity() {
-  const userId = useContext(UserContext);
-  const useMock = useContext(DataContext);
-  const activityData = useFetch(userId, 'activity', useMock);
+  const api = useContext(ApiContext);
+  const activityData = useFetch(api.userId, 'activity', api.useMock);
   const chartData = activityData.data.chartData;
 
   const CustomTooltip = ({ active, payload }) => {

@@ -15,14 +15,13 @@ import Settings from './components/pages/Settings';
 import Community from './components/pages/Community';
 import { CONNECTED_USERID, USE_MOCK } from './settings/apiSettings';
 
-export const UserContext = React.createContext();
-export const DataContext = React.createContext();
+export const ApiContext = React.createContext();
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Root />} errorElement={<ErrorPage />}>
       <Route index element={<Navigate to={'profile'} />} />
-      <Route path="profile" element={<Profile userId={CONNECTED_USERID} />} />
+      <Route path="profile" element={<Profile />} />
       <Route path="/home" element={<Home />} />
       <Route path="settings" element={<Settings />} />
       <Route path="community" element={<Community />} />
@@ -32,11 +31,11 @@ const router = createBrowserRouter(
 
 function App() {
   return (
-    <UserContext.Provider value={CONNECTED_USERID}>
-      <DataContext.Provider value={USE_MOCK}>
-        <RouterProvider router={router} />
-      </DataContext.Provider>
-    </UserContext.Provider>
+    <ApiContext.Provider
+      value={{ userId: CONNECTED_USERID, useMock: USE_MOCK }}
+    >
+      <RouterProvider router={router} />
+    </ApiContext.Provider>
   );
 }
 

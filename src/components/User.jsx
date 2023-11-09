@@ -5,13 +5,12 @@ import Performance from './charts/Performance';
 import Sessions from './charts/Sessions';
 import DataTag from './atoms/DataTag';
 import UserScore from './charts/UserScore';
-import { UserContext, DataContext } from '../App';
+import { ApiContext } from '../App';
 import { useContext } from 'react';
 
 function User() {
-  const userId = useContext(UserContext);
-  const useMock = useContext(DataContext);
-  const userData = useFetch(userId, '', useMock);
+  const api = useContext(ApiContext);
+  const userData = useFetch(api.userId, '', api.useMock);
   const keyData = userData.data.keyData;
   return (
     <>

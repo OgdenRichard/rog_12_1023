@@ -1,6 +1,6 @@
 import React from 'react';
 import useFetch from '../../hooks/useFetch';
-import { UserContext, DataContext } from '../../App';
+import { ApiContext } from '../../App';
 import { useContext } from 'react';
 import {
   LineChart,
@@ -12,9 +12,8 @@ import {
 } from 'recharts';
 
 function Sessions() {
-  const userId = useContext(UserContext);
-  const useMock = useContext(DataContext);
-  const sessionsData = useFetch(userId, 'average-sessions', useMock);
+  const api = useContext(ApiContext);
+  const sessionsData = useFetch(api.userId, 'average-sessions', api.useMock);
   const chartData = sessionsData.data.chartData;
 
   const CustomTooltip = ({ active, payload }) => {

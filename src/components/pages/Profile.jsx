@@ -2,11 +2,11 @@ import React from 'react';
 import User from '../User';
 import SideBar from '../layouts/SideBar';
 
-function Profile({ userId }) {
+function Profile() {
   return (
     <main>
       <SideBar />
-      <User id={userId} />
+      <User />
     </main>
   );
 }

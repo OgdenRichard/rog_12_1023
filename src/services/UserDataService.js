@@ -50,7 +50,7 @@ export default class UserDataService {
 
   getSingleRequestData = async () => {
     if (this.isMocked) {
-      console.log(`fetching ${this.params}`);
+      // console.log(`fetching ${this.params ? this.params : 'user'}`);
       this.getSingleRequestMockedData();
     } else {
       this.data = await this.getSingleRequestApiData();
