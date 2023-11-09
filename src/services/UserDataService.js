@@ -1,5 +1,5 @@
 import axios from 'axios';
-import mockedData from '../mocks/mockdata.json';
+import mockedData from '../data/mocks/mockdata.json';
 import { API_BASE_URL, API_ENDPOINTS } from '../settings/apiSettings';
 import DataFactory from '../factories/DataFactory';
 
@@ -15,8 +15,6 @@ export default class UserDataService {
 
   loadSingleRequestData = async () => {
     this.buildRequestUrl();
-    /* this.setEndpoints();
-    this.getAllUserApiData(); */
     await this.getSingleRequestData();
     return new DataFactory(this.params, this.data).model;
   };

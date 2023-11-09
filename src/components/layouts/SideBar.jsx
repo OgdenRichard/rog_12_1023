@@ -1,8 +1,8 @@
 import React from 'react';
-import meditation from '../assets/images/meditation.svg';
-import swimming from '../assets/images/swimming.svg';
-import bike from '../assets/images/bike.svg';
-import dumbbells from '../assets/images/dumbbells.svg';
+import meditation from '../../assets/images/meditation.svg';
+import swimming from '../../assets/images/swimming.svg';
+import bike from '../../assets/images/bike.svg';
+import dumbbells from '../../assets/images/dumbbells.svg';
 
 function SideBar() {
   return (

@@ -5,13 +5,13 @@ import {
   RouterProvider,
   Navigate,
 } from 'react-router-dom';
-import { Home } from './pages/Home';
-import { ErrorPage } from './pages/ErrorPage';
-import { Root } from './layouts/Root';
+import { Home } from './components/pages/Home';
+import { ErrorPage } from './components/pages/ErrorPage';
+import { Root } from './components/layouts/Root';
 import './style/App.css';
-import Profile from './pages/Profile';
-import Settings from './pages/Settings';
-import Community from './pages/Community';
+import Profile from './components/pages/Profile';
+import Settings from './components/pages/Settings';
+import Community from './components/pages/Community';
 import { CONNECTED_USERID } from './settings/apiSettings';
 
 const router = createBrowserRouter(
