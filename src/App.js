@@ -20,12 +20,13 @@ export const ApiContext = React.createContext();
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path="/" element={<Root />} errorElement={<ErrorPage />}>
+    <Route path="/" element={<Root />}>
       <Route index element={<Navigate to={'profile'} />} />
       <Route path="profile" element={<Profile />} />
-      <Route path="/home" element={<Home />} />
+      <Route path="home" element={<Home />} />
       <Route path="settings" element={<Settings />} />
       <Route path="community" element={<Community />} />
+      <Route path="*" element={<ErrorPage />} />
     </Route>,
   ),
 );
