@@ -12,6 +12,7 @@ import {
   Bar,
   ResponsiveContainer,
 } from 'recharts';
+import FetchError from '../atoms/FetchError';
 
 function Activity() {
   const api = useContext(ApiContext);
@@ -43,7 +44,7 @@ function Activity() {
 
   return (
     <>
-      {chartData && (
+      {chartData ? (
         <ResponsiveContainer width="100%" height="100%">
           <BarChart
             width={100}
@@ -98,6 +99,8 @@ function Activity() {
             />
           </BarChart>
         </ResponsiveContainer>
+      ) : (
+        activityData.error && <FetchError />
       )}
     </>
   );

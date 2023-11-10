@@ -10,6 +10,7 @@ import {
   ResponsiveContainer,
   YAxis,
 } from 'recharts';
+import FetchError from '../atoms/FetchError';
 
 function Sessions() {
   const api = useContext(ApiContext);
@@ -42,7 +43,7 @@ function Sessions() {
         <h3 className="sessions__title">
           Durée moyenne des<br></br> sessions
         </h3>
-        {chartData && (
+        {chartData ? (
           <ResponsiveContainer width="100%" height="100%">
             <LineChart
               width={100}
@@ -84,6 +85,8 @@ function Sessions() {
               />
             </LineChart>
           </ResponsiveContainer>
+        ) : (
+          sessionsData.error && <FetchError color="black" />
         )}
       </div>
     </>

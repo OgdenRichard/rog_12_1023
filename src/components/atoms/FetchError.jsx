@@ -1,9 +1,11 @@
 import React from 'react';
 
-function FetchError() {
+function FetchError({ color = '#e60000' }) {
   return (
     <>
-      <div className="error__display">Erreur : données indisponibles</div>
+      <div className="error__display" style={{ color: `${color}` }}>
+        Erreur : données indisponibles
+      </div>
     </>
   );
 }

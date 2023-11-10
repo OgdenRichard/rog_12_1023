@@ -103,6 +103,7 @@ main {
   height: 400px;
   display: flex;
   align-items: center;
+  justify-content: space-around;
   margin-bottom: 50px;
   padding-top: 20px;
   background-color: #f2f2f2;
@@ -166,8 +167,7 @@ main {
   border-radius: 5px;
 }
 
-.red_text,
-.error__display {
+.red_text {
   color: #e60000;
 }
 
