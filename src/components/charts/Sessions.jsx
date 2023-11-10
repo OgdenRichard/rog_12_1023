@@ -37,6 +37,19 @@ function Sessions() {
     return null;
   };
 
+  function CustomCursor({ points }) {
+    return (
+      <rect
+        className="widget-sessions__cursor"
+        fill="#000000"
+        opacity={0.1}
+        x={points[0].x}
+        height="100%"
+        width="100%"
+      />
+    );
+  }
+
   return (
     <>
       <div className="square_chart_wrapper sessions_chart">
@@ -67,7 +80,7 @@ function Sessions() {
               />
               <Tooltip
                 content={<CustomTooltip />}
-                cursor={{ stroke: '#d80303', strokeWidth: 150 }}
+                cursor={<CustomCursor />}
                 viewBox={{ x: 0, y: 0, width: 400, height: 400 }}
               />
               <Line

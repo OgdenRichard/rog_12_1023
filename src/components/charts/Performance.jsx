@@ -21,13 +21,13 @@ function Performance() {
         {chartData ? (
           <ResponsiveContainer width="100%" height="100%">
             <RadarChart
-              outerRadius={120}
+              outerRadius={95}
               width={100}
               height={100}
               data={chartData}
             >
               <PolarGrid
-                polarRadius={[40, 60, 80, 100, 120]}
+                polarRadius={[20, 35, 55, 75, 95]}
                 radialLines={false}
               />
               <PolarAngleAxis

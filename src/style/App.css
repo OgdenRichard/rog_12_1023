@@ -199,7 +199,7 @@ main {
 
 .sessions__title {
   position: absolute;
-  top: 20px;
+  top: 10px;
   left: 20px;
   z-index: 2;
   color: #ff8181;
@@ -221,8 +221,8 @@ main {
 }
 
 .square_chart_wrapper {
-  width: 325px;
-  height: 325px;
+  width: 275px;
+  height: 275px;
   display: flex;
   align-items: center;
   justify-content: space-around;
