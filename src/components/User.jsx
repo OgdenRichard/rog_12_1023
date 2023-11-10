@@ -23,7 +23,7 @@ function User() {
               Bonjour{' '}
               <span className="red_text">{userData.data.firstName}</span>
             </h1>
-            <p>Félicitations! vous avez explosé vos objectifs hier 💩</p>
+            <p>Félicitations! vous avez explosé vos objectifs hier 👏</p>
           </div>
           <div className="user__main_wrapper">
             <section className="user__graphs">

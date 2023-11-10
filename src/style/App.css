@@ -245,6 +245,17 @@ main {
 
 /* ------------------------------------ MEDIA QUERIES ------------------------------------ */
 
+@media only screen and (width > 1875px) {
+  header {
+    justify-content: flex-start;
+  }
+
+  nav {
+    width: 1450px;
+    margin-left: 250px;
+  }
+}
+
 @media only screen and (width < 1615px) {
   .tags__wrapper {
     height: 700px;
