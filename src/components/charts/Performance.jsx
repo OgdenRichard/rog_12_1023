@@ -18,7 +18,7 @@ function Performance() {
   return (
     <>
       <div className="square_chart_wrapper performance_chart">
-        {(chartData && (
+        {chartData ? (
           <ResponsiveContainer width="100%" height="100%">
             <RadarChart
               outerRadius={120}
@@ -43,8 +43,9 @@ function Performance() {
               />
             </RadarChart>
           </ResponsiveContainer>
-        )) ||
-          (performanceData.error && <FetchError />)}
+        ) : (
+          performanceData.error && <FetchError />
+        )}
       </div>
     </>
   );
