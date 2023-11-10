@@ -18,8 +18,8 @@ function UserScore({ chartData }) {
               barSize={12}
             >
               <text
-                x={55}
-                y={50}
+                x={45}
+                y={40}
                 className="score__title"
                 fill="black"
                 textAnchor="middle"
@@ -28,8 +28,8 @@ function UserScore({ chartData }) {
                 <tspan fontSize="18">Score</tspan>
               </text>
               <text
-                x={170}
-                y={150}
+                x={145}
+                y={125}
                 className="score__title"
                 fill="black"
                 textAnchor="middle"
@@ -38,8 +38,8 @@ function UserScore({ chartData }) {
                 <tspan fontSize="32">{chartData[1].score * 100}%</tspan>
               </text>
               <text
-                x={162}
-                y={190}
+                x={140}
+                y={155}
                 fill="#74798C"
                 textAnchor="middle"
                 dominantBaseline="central"
