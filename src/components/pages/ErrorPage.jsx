@@ -6,7 +6,7 @@ export function ErrorPage() {
       <SideBar />
       <div id="error-page">
         <h1>Erreur</h1>
-        <h2>Sorry, an unexpected error has occurred.</h2>
+        <h2>Cette page est introuvable</h2>
       </div>
     </main>
   );
