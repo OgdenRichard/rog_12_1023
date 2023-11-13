@@ -53,7 +53,7 @@ export default class UserDataService {
 
   /**
    * fetch data from API
-   * @throws{Axios.Error}
+   * @throws {Axios.Error}
    * @returns {Object}
    */
   getSingleRequestApiData = async () => {

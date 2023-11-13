@@ -1,4 +1,8 @@
 export default class SessionsModel {
+  /**
+   * @constructor
+   * @param {Object} data
+   */
   constructor(data) {
     this.userId = data.userId;
     this.weekdays_fr = {
@@ -13,6 +17,10 @@ export default class SessionsModel {
     this.setChartData(data);
   }
 
+  /**
+   * @param {Object} data
+   *  @returns {void}
+   */
   setChartData = (data) => {
     this.chartData = [];
     if (data.sessions) {

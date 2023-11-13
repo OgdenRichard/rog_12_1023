@@ -1,4 +1,8 @@
 export default class PerformanceModel {
+  /**
+   * @constructor
+   * @param {Object} data
+   */
   constructor(data) {
     this.userId = data.userId;
     this.types_fr = {
@@ -12,6 +16,10 @@ export default class PerformanceModel {
     this.setChartData(data);
   }
 
+  /**
+   * @param {Object} data
+   *  @returns {void}
+   */
   setChartData = (data) => {
     this.chartData = [];
     if (data.data) {

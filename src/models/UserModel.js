@@ -4,6 +4,10 @@ import carbo from '../assets/images/carbo.svg';
 import lipids from '../assets/images/lipids.svg';
 
 export default class UserModel {
+  /**
+   * @constructor
+   * @param {Object} data
+   */
   constructor(data) {
     this.firstName = data.userInfos.firstName;
     this.userScore = data.score || data.todayScore;
@@ -11,6 +15,10 @@ export default class UserModel {
     this.setKeyData(data);
   }
 
+  /**
+   * @param {Object} data
+   *  @returns {void}
+   */
   setKeyData = (data) => {
     this.keyData = null;
     if (data.keyData) {

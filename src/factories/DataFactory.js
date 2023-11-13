@@ -4,6 +4,11 @@ import PerformanceModel from '../models/PerformanceModel';
 import SessionsModel from '../models/SessionsModel';
 
 export default class DataFactory {
+  /**
+   * @constructor
+   * @param {string} param
+   * @param {Object} data
+   */
   constructor(param, data) {
     if (param === '') {
       this.dataModel = new UserModel(data);
@@ -19,6 +24,9 @@ export default class DataFactory {
     }
   }
 
+  /**
+   * @returns {Object}
+   */
   get model() {
     return this.dataModel;
   }
