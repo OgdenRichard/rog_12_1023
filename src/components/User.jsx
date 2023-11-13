@@ -13,7 +13,6 @@ function User() {
   const api = useContext(ApiContext);
   const userData = useFetch(api.userId, '', api.useMock);
   const keyData = userData.data.keyData;
-  console.log(userData.data);
   return (
     <>
       {Object.keys(userData.data).length ? (
